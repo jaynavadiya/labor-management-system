@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/index_css.css" type="text/css">
+    <link rel="stylesheet" href="css/title_css.css" type="text/css">
+    <link rel="stylesheet" href="css/form_css.css" type="text/css">
+    <link rel="stylesheet" href="css/table_css.css" type="text/css">
+    <title>Location Info</title>
+</head>
+
+
+<body style="background-image: url('/imgs/white-background.webp'); background-attachment: fixed;">
+    <center>
+    <!--Nav bar-->
+    <%- include('../partials/header_log.ejs') %>
+
+        <% if(data.results.length> 0) { %>
+            <div class="tbl s_tbl">
+                <table>
+                    <th>
+                        Location ID
+                    </th>
+                    <th>
+                        City
+                    </th>
+                    <th>
+                        District
+                    </th>
+
+                    
+                    <% data.results.forEach(element=> {%>
+                        <tr>
+                            <td>
+                                <%= element.location_id %>
+                            </td>
+                            <td>
+                                <%= element.city %>
+                            </td>
+                            <td>
+                                <%= element.district %>
+                            </td>
+                            
+                        </tr>
+                        <% }); %>
+                </table>
+                <div class="btn">
+                    <% if(data.prev) {%>
+                        <div class="prev bt">
+                            <% var str = `location_info?page=${data.prev.page}&limit=${data.prev.limit}` %>
+                            <a href= <%=str%> > << PREV</a>
+                        </div>
+                    <% } %>
+                    <% if(data.next) { %>
+                        <div class="next bt">
+                            <% var str = `location_info?page=${data.next.page}&limit=${data.next.limit}` %>
+                            <a href= <%=str%> >NEXT >> </a>
+                        </div>
+                    <% } %>
+                </div>
+            </div>
+            <% } %>
+
+        </center>
+</body>
+<%- include('../partials/footer.ejs') %>
+</html>

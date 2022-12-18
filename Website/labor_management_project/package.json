@@ -1,0 +1,32 @@
+{
+  "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "body-parser": "^1.20.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "moment": "^2.29.4",
+    "pg": "^8.8.0"
+  },
+  "scripts": {
+    "devStart": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "name": "v1",
+  "version": "1.0.0",
+  "main": "app.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaynavadiya/laborlist_and_wages"
+  },
+  "bugs": {
+    "url": "https://github.com/jaynavadiya/laborlist_and_wages/issues"
+  },
+  "homepage": "https://github.com/jaynavadiya",
+  "description": ""
+}

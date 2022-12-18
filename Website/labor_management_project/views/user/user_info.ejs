@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/index_css.css" type="text/css">
+    <link rel="stylesheet" href="css/info_css.css" type="text/css">
+    <link rel="stylesheet" href="css/btn_css.css" type="text/css">
+    <title>
+        <%= pdata.name %> Info
+    </title>
+    <% console.log(data); %>
+</head>
+
+<body>
+    <!--Nav bar-->
+    <%- include('../partials/header_log.ejs') %>
+
+        <!--Options-->
+
+        <div class="main_div bx">
+            <div class="details">
+                <div class="title">
+                    <%= pdata.name %>'s Information
+                </div>
+                <form action="/delete_user" id="insert_form" method="post">
+                    <table>
+                        <tr>
+                            <td class="ip">
+                                User ID
+                            </td>
+                            <td class="op">
+                                <input type="text" id="id" name="id" value="<%= data.user_id %>" readonly>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="ip">
+                                Account Number
+                            </td>
+                            <td class="op">
+                                <input type="text" id="acc_num" name="acc_num" value="<%= data.account_number %>" readonly>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="ip">
+                                Location ID
+                            </td>
+                            <td class="op">
+                                <input type="text" id="location_id" name="location_id" value="<%= data.location_id %>" readonly>
+                            </td>
+                        </tr>
+
+                       
+                        <tr>
+    
+                            <td class="ip">
+                                Name
+                            </td>
+    
+    
+                            <td class="op">
+                                <input type="text" id="name" name="name" value="<%= pdata.name %>" readonly>
+                            </td>
+    
+                        </tr>
+    
+                       
+                        <tr>
+    
+                            <td class="ip">
+                                Email
+                            </td>
+    
+    
+                            <td class="op">
+                                <input type="text" value=" <%= pdata.email %>" name="email" id="email_ip" class="ip email_ip" readonly>                            
+                            </td>
+    
+                        </tr>
+
+                        <tr>
+    
+                            <td class="ip">
+                                Mobile Number
+                            </td>
+    
+    
+                            <td class="op">
+                                <input type="text" value=" <%= pdata.mobile_number %>" name="mo_number" id="mo_number" class="ip email_ip" readonly>                            
+                            </td>
+    
+                        </tr>
+
+                        <tr>
+    
+                            <td class="ip">
+                                City
+                            </td>
+    
+    
+                            <td class="op">
+                                <input type="text" value=" <%= location.city %>" name="city" id="city" class="ip email_ip" readonly>                            
+                            </td>
+    
+                        </tr>
+
+                        <tr>
+    
+                            <td class="ip">
+                                District
+                            </td>
+    
+    
+                            <td class="op">
+                                <input type="text" value=" <%= location.district %>" name="district" id="district" class="ip email_ip" readonly>                            
+                            </td>
+    
+                        </tr>
+    
+                        
+                        
+    
+                    </table>
+                </form>
+                <div class="btns">
+                    <button type="submit" class="edit_btn" onclick="location.href='/user_edit?id=<%= pdata.user_id %>'">
+                        EDIT
+                    </button>
+                    <button type="submit" class="delete_btn" onclick="myFunc();">
+                        DELETE
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+</body>
+<%- include('../partials/footer.ejs') %>
+</html>
+
+<script>
+    function myFunc(){
+        document.getElementById('insert_form').submit();
+    }
+</script>

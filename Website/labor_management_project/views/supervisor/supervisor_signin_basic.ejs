@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/index_css.css" type="text/css">
+    <link rel="stylesheet" href="css/title_css.css" type="text/css">
+    <link rel="stylesheet" href="css/form_css.css" type="text/css">
+    <link rel="stylesheet" href="css/btn_css.css" type="text/css">
+    <title>Document</title>
+</head>
+
+<body>
+    <%- include('../partials/header_log.ejs') %>
+
+    <div class="Form_Div">
+        <div class="form_title">Enter Information</div>
+        <hr class="hr_form">
+        <form action="/supervisor_signin" method="post" id="insert_form" class="insrt_form">
+
+            <label for="name" class="form_text">
+                Supervisor Name
+            </label>
+            <br>
+            <input type="text" class="fname_ip ip" name="name" id="name" required>
+            <br>
+
+            <label for="passwd" class="form_text">
+                Password
+            </label>
+            <br>
+            <input type="password" class="passwd_ip ip"  name="passwd" id="passwd" required>
+            <br>
+
+
+
+            <label for="phone" class="form_text">
+                Phone Number
+            </label>
+            <br>
+            <input type="text" class="phn_ip ip" name="mo_number" id="mo_number" required>
+            <br>
+
+
+            <label for="email" class="form_text">
+                Email Address
+            </label>
+            <br>
+            <input type="text" class="email_ip ip" name="email" id="email" required>
+            <br>
+
+            
+        <label for = "city" class="form_text">
+                City
+        </label>
+        <br>
+        <input type="text" class="city_ip ip" name="city" id="city" required>
+        </br>
+
+        <label for = "district" class="form_text">
+            District
+        </label>
+        <br>
+        <input type="text" class="city_ip ip" name="district" id="district" required>
+        </br>
+
+        
+
+
+        <label for = "type_of_user" class="form_text">
+            Type of User
+        </label>
+        <br>
+        
+        <select  name="type_of_user" id="type_of_user">
+            <option value="first_option" disabled selected>Select Type of User</option>
+            <option value="user">User</option>
+            <option value="labor">Labor</option>
+            <option value="supervisor">Labor Supervisor</option>
+            <option value="business">Business</option>
+            <option value="official">Government_official</option>
+        </select>
+        </br>
+
+ 
+    
+            
+
+            <button class="btn submit_btn" onclick="myFunc();">
+                Next
+            </button>
+
+            <br>
+            <br>
+
+            <a href="/supervisor_login" style="color:white; text-decoration:underline;">Already have an account?</a>
+
+
+        </form>
+    </div>
+</body>
+<%- include('../partials/footer.ejs') %>
+</html>
+
+<script>
+    function myFunc(){
+        document.getElementById("insert_form").submit();
+    }
+</script>

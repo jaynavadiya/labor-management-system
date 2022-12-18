@@ -1,0 +1,44 @@
+table, th, td{
+    border: 1px solid rgb(255, 255, 255);
+    border-collapse: collapse;
+}
+
+table{
+    margin-bottom: 2%;
+    margin-left: 2%;
+    backdrop-filter: blur(30px);
+    padding: 2%;
+    color: black;
+    width:100%;
+}
+
+.tbl{
+    margin-top: 7%;
+    width:60%;
+    text-align: center;
+    padding-bottom: 2%;
+}
+
+.btn{
+    margin: auto;
+    color: white;
+    padding: 0% 5%;
+}
+
+.bt{
+    display: inline-block;
+    padding-inline: 20%;
+}
+
+a{
+    color:black;
+}
+
+
+tr:hover {
+background-color: #D6EEEE
+};
+
+.bt{
+    color: black;
+}

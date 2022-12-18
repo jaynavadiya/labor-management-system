@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/index_css.css" type="text/css">
+    <link rel="stylesheet" href="css/title_css.css" type="text/css">
+    <link rel="stylesheet" href="css/form_css.css" type="text/css">
+    <link rel="stylesheet" href="css/table_css.css" type="text/css">
+    <title>Employee Info</title>
+</head>
+
+
+<body style="background-image: url('/imgs/white-background.webp'); background-attachment: fixed;">
+    <center>
+    <!--Nav bar-->
+    <%- include('../partials/header_log.ejs') %>
+
+        <% if(data.results.length> 0) { %>
+            <div class="tbl s_tbl">
+                <table>
+                    <th>
+                        User ID
+                    </th>
+                    <th>
+                        Labor ID
+                    </th>
+                    <th>
+                        Supervisor ID
+                    </th>
+                    <th>
+                        Government Official ID
+                    </th>
+                    <th>
+                        Mobile Number
+                    </th>
+                    <th>
+                        Type of User
+                    </th>
+                        
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Email
+                    </th>
+                    
+                    <% data.results.forEach(element=> {%>
+                        <tr>
+                            <td>
+                                <%= element.user_id %>
+                            </td>
+                            <td>
+                                <%= element.labor_id %>
+                            </td>
+                            <td>
+                                <%= element.supervisor_id %>
+                            </td>
+                            <td>
+                                <%= element.official_id %>
+                            </td>
+                            <td>
+                                <%= element.mobile_number %>
+                            </td>
+                            <td>
+                                <%= element.type_of_user %>
+                            </td>
+                            <td>
+                                <%= element.name %>
+                            </td>
+                            <td>
+                                <%= element.email %>
+                            </td>
+                            
+                        </tr>
+                        <% }); %>
+                </table>
+                <div class="btn">
+                    <% if(data.prev) {%>
+                        <div class="prev bt">
+                            <% var str = `personal_info?page=${data.prev.page}&limit=${data.prev.limit}` %>
+                            <a href= <%=str%> > << PREV</a>
+                        </div>
+                    <% } %>
+                    <% if(data.next) { %>
+                        <div class="next bt">
+                            <% var str = `personal_info?page=${data.next.page}&limit=${data.next.limit}` %>
+                            <a href= <%=str%> >NEXT >> </a>
+                        </div>
+                    <% } %>
+                </div>
+            </div>
+            <% } %>
+
+        </center>
+</body>
+<%- include('../partials/footer.ejs') %>
+</html>

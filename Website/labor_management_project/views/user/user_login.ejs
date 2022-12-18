@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/index_css.css" type="text/css">
+    <link rel="stylesheet" href="css/title_css.css" type="text/css">
+    <link rel="stylesheet" href="css/login_css.css" type="text/css">
+    <link rel="stylesheet" href="css/btn_css.css" type="text/css">
+    <title>Individual User Login</title>
+</head>
+
+<body>
+    <!--Nav bar-->
+    <%- include('../partials/header_def.ejs') %>
+
+        <!--Options-->
+
+        <div class="main_div bx">
+            <form action="/user_login" method="POST" id="insert_form" class="insrt_form">
+                <div class="title_box">
+                    <div class="title_text">
+                        <h2>
+                            Login as an Individual User
+                        </h2>
+                    </div>
+                </div>
+
+                <hr class="hr_title">
+
+                <div class="lbl lbl_txt">
+                    <label for="instrctr_id" class="txt_lbl">
+                        User ID
+                    </label>
+                    <br>
+                    <input type="number" class="ip i_id_ip" id="user_login_id" name="user_login_id" required>
+
+                </div>
+
+                <div class="lbl lbl_txt">
+                    <label for="instrctr_passwd" class="txt_lbl">
+                        User Password
+                    </label>
+                    <br>
+                    <input type="password" class="ip i_passwd_ip" id="user_login_passwd" name="user_login_passwd" required>
+                </div>
+
+                <button type="submit" class="btn submit_btn" onclick="myFunction();">
+                    Log-In
+                </button>
+                <br>
+                <br>
+                <a href="/user_signin" style="color:white; text-decoration:underline;">Don't have an account?</a>
+            </form>
+
+        </div>
+
+
+</body>
+<%- include('../partials/footer.ejs') %>
+</html>
+
+<script>
+    function myFunction() {
+        document.getElementById("insert_form").submit();
+    }
+</script>
